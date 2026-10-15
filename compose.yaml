@@ -1,0 +1,13 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-chat
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "61613:61613"
+    command: >
+      sh -c "rabbitmq-plugins enable --offline rabbitmq_stomp && rabbitmq-server"
+
+## se agrega este comando para habilitar el plugin de STOMP en RabbitMQ, que es necesario para la comunicación con WebSockets.
+## tratando de evitar problemas al momento de que lo pruebe profe, mas que nada por si acaso e.e

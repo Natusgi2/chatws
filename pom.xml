@@ -61,6 +61,11 @@
             <artifactId>spring-boot-starter-websocket-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty</artifactId>
+        </dependency>
+        
     </dependencies>
 
     <build>
