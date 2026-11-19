@@ -13,13 +13,13 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override 
     public void configureMessageBroker(MessageBrokerRegistry config) {
         // Enlace con RabbitMQ STOMP relay
-        config.enableStompBrokerRelay("/topic")
-                .setRelayHost("localhost")
-                .setRelayPort(61613)
-                .setClientLogin("guest")
-                .setClientPasscode("guest")
-                .setSystemLogin("guest")
-                .setSystemPasscode("guest");
+        config.enableStompBrokerRelay("/topic", "/queue")
+            .setRelayHost("localhost")
+            .setRelayPort(16163)
+            .setClientLogin("guest")
+            .setClientPasscode("guest")
+            .setSystemLogin("guest")
+            .setSystemPasscode("guest");
 
         config.setApplicationDestinationPrefixes("/app");
     }
